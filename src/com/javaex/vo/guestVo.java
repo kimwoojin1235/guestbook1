@@ -50,7 +50,7 @@ public class guestVo {
 		//메소드 - 일반
 		@Override
 		public String toString() {
-			return "GBVo [no=" + no + ", name=" + name + ", password=" + password + ", content=" + content + ", reg_date="
+			return "guestVo [no=" + no + ", name=" + name + ", password=" + password + ", content=" + content + ", reg_date="
 					+ regdate + "]";
 		}
 	
