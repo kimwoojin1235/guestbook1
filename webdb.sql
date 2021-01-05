@@ -26,7 +26,7 @@ DELETE FROM guestbook WHERE no = 1;
 
 --생성
 INSERT INTO guestbook VALUES (seq_guest_id.nextval,'성동일','1234','안녕하세요 성동일 입니다.',SYSDATE);
-
+COMMIT;
 --리스트 만들기
 SELECT  no,
         name,
