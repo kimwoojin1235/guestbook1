@@ -77,9 +77,9 @@ public class guestDao {
 			// 4.결과처리
 			while(rs.next()) {
 								
-				guestVo gbVo = new guestVo(rs.getInt("no"), rs.getString("name"), rs.getString("password"), rs.getString("content"), rs.getString("reg_date"));
+				guestVo guVo = new guestVo(rs.getInt("no"), rs.getString("name"), rs.getString("password"), rs.getString("content"), rs.getString("reg_date"));
 				
-				guList.add(gbVo);
+				guList.add(guVo);
 			}
 		} catch (SQLException e) {
 		    System.out.println("error:" + e);
