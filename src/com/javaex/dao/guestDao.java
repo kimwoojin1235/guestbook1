@@ -98,7 +98,7 @@ public class guestDao {
 			// 3. SQL문 준비 / 바인딩 / 실행
 			String query="";
 			query +=" insert into guestbook";
-			query +=" values (seq_guest_no.nextval, ?, ?, ?, sysdate)";
+			query +=" values (seq_guest_id.nextval, ?, ?, ?, sysdate)";
 			
 			pstmt = conn.prepareStatement(query);
 			
