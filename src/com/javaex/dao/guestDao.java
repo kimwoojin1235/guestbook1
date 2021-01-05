@@ -23,7 +23,7 @@ public class guestDao {
 	
 	private int count = 0;
 	
-	private void connectDB() {
+	private void getConnection() {
 		try {
 			// 1. JDBC 드라이버 (Oracle) 로딩
 			Class.forName(driver);
@@ -37,7 +37,7 @@ public class guestDao {
 		} 
 	}
 	
-	private void closeRs() {
+	private void close() {
 		// 5. 자원정리
 	    try {
 	        if (rs != null) {
@@ -58,7 +58,7 @@ public class guestDao {
 		
 		List<guestVo> guList = new ArrayList<guestVo>();
 		
-		connectDB();
+		getConnection();
 		
 		try {		
 			// 3. SQL문 준비 / 바인딩 / 실행
@@ -85,20 +85,20 @@ public class guestDao {
 		    System.out.println("error:" + e);
 		}
 		
-		closeRs();
+		close();
 		
 		return guList;
 	}
 	
 	public int guestinsert(String name, String password, String content) {
 		
-		connectDB();
+		getConnection();
 		
 		try {		
 			// 3. SQL문 준비 / 바인딩 / 실행
 			String query="";
 			query +=" insert into guestbook";
-			query +=" values (seq_guestbook_no.nextval, ?, ?, ?, sysdate)";
+			query +=" values (seq_guest_no.nextval, ?, ?, ?, sysdate)";
 			
 			pstmt = conn.prepareStatement(query);
 			
@@ -115,14 +115,14 @@ public class guestDao {
 		    System.out.println("error:" + e);
 		}
 		
-		closeRs();
+		close();
 		
 		return count;
 	}
 	
 	public int guestdelete(int no) {
 		
-		connectDB();
+		getConnection();
 		
 		try {		
 			// 3. SQL문 준비 / 바인딩 / 실행
@@ -143,7 +143,7 @@ public class guestDao {
 		    System.out.println("error:" + e);
 		}
 		
-		closeRs();
+		close();
 		
 		return count;
 		
@@ -153,7 +153,7 @@ public class guestDao {
 		
 		guestVo guVo=null;
 		
-		connectDB();
+		getConnection();
 		
 		try {		
 			// 3. SQL문 준비 / 바인딩 / 실행
@@ -181,7 +181,7 @@ public class guestDao {
 		    System.out.println("error:" + e);
 		}
 		
-		closeRs();
+		close();
 		
 		return guVo;
 		
