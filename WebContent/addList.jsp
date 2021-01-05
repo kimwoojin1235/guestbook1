@@ -6,10 +6,10 @@
 <%@ page import="com.javaex.vo.guestVo" %>
 
 <%
-	guestDao gbDao = new guestDao();
-	List<guestVo> gbList = gbDao.getList();
+guestDao gbDao = new guestDao();
+	List<guestVo> guList = gbDao.getList();
 	
-	System.out.println(gbList.toString());
+	System.out.println(guList.toString());
 %>
 <!DOCTYPE html>
 <html>
@@ -19,7 +19,7 @@
 	</head>
 	
 	<body>
-		<form action="./add.jsp" method="post">
+		<form action="./add.jsp" method="get">
 			<table border="1">
 				<tr>
 					<td>이름</td>
@@ -37,16 +37,16 @@
 		</form>
 		
 		<br>
-		<% for(int i=0; i<gbList.size();i++) { %>
+		<% for(int i=0; i<guList.size();i++) { %>
 			<table border="1">
 				<tr>
-					<td><%= gbList.get(i).getNo() %></td>
-					<td><%= gbList.get(i).getName() %></td>
-					<td><%= gbList.get(i).getRegdate() %></td>
-					<td><a href="./deleteForm.jsp?no=<%=gbList.get(i).getNo()%>">삭제</a></td>
+					<td><%= guList.get(i).getNo() %></td>
+					<td><%= guList.get(i).getName() %></td>
+					<td><%= guList.get(i).getRegdate() %></td>
+					<td><a href="./deleteForm.jsp?no=<%=guList.get(i).getNo()%>">삭제</a></td>
 				</tr>
 				<tr>
-					<td colspan="4"> <%= gbList.get(i).getContent() %> </td>
+					<td colspan="4"> <%= guList.get(i).getContent() %> </td>
 				</tr>
 			</table>
 			<br>
