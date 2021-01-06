@@ -17,8 +17,4 @@ GuestVo gVo = guDao.getgusetWriting(no);
 		<title>Insert title here</title>
 	</head>
 	<body>
-		<%if(password.equals(gVo.getPassword())) {%>
-			guDao.guestdelete(no);
-			response.sendRedirect("./addList.jsp");
-		<% } %>
 </html>
