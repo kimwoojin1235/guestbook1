@@ -8,8 +8,6 @@
 <%
 guestDao gbDao = new guestDao();
 	List<guestVo> guList = gbDao.getList();
-	
-	System.out.println(guList.toString());
 %>
 <!DOCTYPE html>
 <html>
