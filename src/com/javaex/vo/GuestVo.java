@@ -14,7 +14,18 @@ public class GuestVo {
 		this.content = content;
 		this.regdate = regdate;
 	}
-		
+	public GuestVo(String name, String password, String content) {
+		super();
+		this.name = name;
+		this.password = password;
+		this.content = content;
+	}
+	
+	public GuestVo(int no, String password) {
+		super();
+		this.no = no;
+		this.password = password;
+	}
 	//메소드 - g/s
 	public int getNo() {
 		return no;

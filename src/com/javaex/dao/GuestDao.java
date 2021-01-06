@@ -90,7 +90,7 @@ public class GuestDao {
 		return guList;
 	}
 	
-	public int guestinsert(String name, String password, String content) {
+	public int guestinsert(GuestVo guVo) {
 		
 		getConnection();
 		
@@ -102,9 +102,9 @@ public class GuestDao {
 			
 			pstmt = conn.prepareStatement(query);
 			
-			pstmt.setString(1, name);
-			pstmt.setString(2, password);
-			pstmt.setString(3, content);
+			pstmt.setString(1, guVo.getName());
+			pstmt.setString(2, guVo.getPassword());
+			pstmt.setString(3, guVo.getContent());
 			
 			count = pstmt.executeUpdate();
 			
@@ -120,19 +120,19 @@ public class GuestDao {
 		return count;
 	}
 	
-	public int guestdelete(int pass) {
+	public int guestdelete(GuestVo guVo) {
 		
 		getConnection();
 		
 		try {		
 			// 3. SQL문 준비 / 바인딩 / 실행
 			String query="";
-			query +=" delete guestbook";
-			query +=" where no = ?";
-			
+			query +=" DELETE FROM guestbook WHERE no = ? ";
+			query +=" and password =?";
 			pstmt = conn.prepareStatement(query);
 			
-			pstmt.setInt(1, pass);
+			pstmt.setInt(1, guVo.getNo());
+			pstmt.setString(2, guVo.getPassword());
 			
 			count = pstmt.executeUpdate();
 			
@@ -149,42 +149,5 @@ public class GuestDao {
 		
 	}
 	
-	public GuestVo getgusetWriting(int no) {
-		
-		GuestVo guVo=null;
-		
-		getConnection();
-		
-		try {		
-			// 3. SQL문 준비 / 바인딩 / 실행
-			String query="";
-			query +=" select	no,";
-			query +="			name,";
-			query +="			password,";
-			query +="			content,";
-			query +="			reg_date";
-			query +=" from guestbook";
-			query +=" where no = ?";
-			
-			pstmt = conn.prepareStatement(query);
-			pstmt.setInt(1, no);
-			
-			rs = pstmt.executeQuery();
-			
-			// 4.결과처리
-			while(rs.next()) {
-								
-				guVo = new GuestVo(rs.getInt("no"), rs.getString("name"),
-						rs.getString("password"), rs.getString("content"), rs.getString("reg_date"));
-
-			}
-		} catch (SQLException e) {
-		    System.out.println("error:" + e);
-		}
-		
-		close();
-		
-		return guVo;
-		
-	}
+	
 }

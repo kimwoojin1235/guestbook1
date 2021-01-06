@@ -6,8 +6,8 @@
 <%@ page import="com.javaex.vo.GuestVo" %>
 
 <%
-	GuestDao gbDao = new GuestDao();
-	List<GuestVo> guList = gbDao.getList();
+	GuestDao guDao = new GuestDao();
+	List<GuestVo> guList = guDao.getList();
 %>
 <!DOCTYPE html>
 <html>

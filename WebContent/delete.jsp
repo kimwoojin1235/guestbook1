@@ -3,12 +3,15 @@
 <%@ page import="com.javaex.vo.GuestVo" %>
 
 <%
-int no = Integer.parseInt(request.getParameter("no"));
+request.setCharacterEncoding("utf-8");
+int on = Integer.parseInt(request.getParameter("no"));
 String password = request.getParameter("password");
 
-GuestDao guDao = new GuestDao();
+GuestVo guVo =new GuestVo(on,password); 
 
-GuestVo gVo = guDao.getgusetWriting(no);
+GuestDao guDao = new GuestDao();
+guDao.guestdelete(guVo);
+response.sendRedirect("./addList.jsp");
 %>
 <!DOCTYPE html>
 <html>
