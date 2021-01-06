@@ -109,7 +109,7 @@ public class guestDao {
 			count = pstmt.executeUpdate();
 			
 			// 4.결과처리
-			//System.out.println("[DAO] : " +count+ "건 등록");
+			System.out.println("[DAO] : " +count+ "건 등록");
 			
 		} catch (SQLException e) {
 		    System.out.println("error:" + e);

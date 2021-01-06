@@ -2,7 +2,7 @@
 <%@ page import="com.javaex.dao.guestDao"%>
 
 <%
-	int no = Integer.parseInt(request.getParameter("no"));	
+	int on = Integer.parseInt(request.getParameter("no"));	
 %>
 <!DOCTYPE html>
 <html>
@@ -14,7 +14,7 @@
 	<body>
 		<form action="./delete.jsp" method="post">
 			비밀번호 <input type="text" name="password">
-			<input type="hidden" name="no" value=<%=no%>>
+			<input type="hidden" name="no" value=<%=on%>>
 			<button type="submit">확인</button><br>
 			
 			<a href="./addList.jsp">메인으로 돌아가기</a>
