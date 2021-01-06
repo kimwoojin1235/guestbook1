@@ -1,19 +1,18 @@
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@page import="com.javaex.dao.guestDao"%>
+<%@page import="com.javaex.dao.GuestDao"%>
 <%
-request.setCharacterEncoding("utf-8");
+	request.setCharacterEncoding("utf-8");
 String name = request.getParameter("name");
 String password = request.getParameter("password");
 String content = request.getParameter("content");
 	
-guestDao guDao = new guestDao();
+GuestDao guDao = new GuestDao();
 	
 guDao.guestinsert(name, password, content);
 	
 response.sendRedirect("./addList.jsp");
-	
 %>
 <!DOCTYPE html>
 <html>

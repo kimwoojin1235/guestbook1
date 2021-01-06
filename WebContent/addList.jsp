@@ -2,12 +2,12 @@
 
 <%@ page import="java.util.List" %>
 
-<%@ page import="com.javaex.dao.guestDao" %>
-<%@ page import="com.javaex.vo.guestVo" %>
+<%@ page import="com.javaex.dao.GuestDao" %>
+<%@ page import="com.javaex.vo.GuestVo" %>
 
 <%
-guestDao gbDao = new guestDao();
-	List<guestVo> guList = gbDao.getList();
+	GuestDao gbDao = new GuestDao();
+	List<GuestVo> guList = gbDao.getList();
 %>
 <!DOCTYPE html>
 <html>

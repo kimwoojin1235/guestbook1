@@ -1,13 +1,13 @@
 package com.javaex.vo;
 
-public class guestVo {
+public class GuestVo {
 	//필드
 	int no;
 	String name, password, content, regdate;
 
 	//생성자
-	public guestVo() {}
-	public guestVo(int no, String name, String password, String content, String regdate) {
+	public GuestVo() {}
+	public GuestVo(int no, String name, String password, String content, String regdate) {
 		this.no = no;
 		this.name = name;
 		this.password = password;

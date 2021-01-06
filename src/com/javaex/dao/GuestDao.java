@@ -8,9 +8,9 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.javaex.vo.guestVo;
+import com.javaex.vo.GuestVo;
 
-public class guestDao {
+public class GuestDao {
 
 	private String driver = "oracle.jdbc.driver.OracleDriver";
 	private String url = "jdbc:oracle:thin:@localhost:1521:xe";
@@ -54,9 +54,9 @@ public class guestDao {
 	    }
 	}
 	
-	public List<guestVo> getList() {
+	public List<GuestVo> getList() {
 		
-		List<guestVo> guList = new ArrayList<guestVo>();
+		List<GuestVo> guList = new ArrayList<GuestVo>();
 		
 		getConnection();
 		
@@ -77,7 +77,7 @@ public class guestDao {
 			// 4.결과처리
 			while(rs.next()) {
 								
-				guestVo guVo = new guestVo(rs.getInt("no"), rs.getString("name"), rs.getString("password"), rs.getString("content"), rs.getString("reg_date"));
+				GuestVo guVo = new GuestVo(rs.getInt("no"), rs.getString("name"), rs.getString("password"), rs.getString("content"), rs.getString("reg_date"));
 				
 				guList.add(guVo);
 			}
@@ -149,9 +149,9 @@ public class guestDao {
 		
 	}
 	
-	public guestVo getgusetWriting(int no) {
+	public GuestVo getgusetWriting(int no) {
 		
-		guestVo guVo=null;
+		GuestVo guVo=null;
 		
 		getConnection();
 		
@@ -174,7 +174,7 @@ public class guestDao {
 			// 4.결과처리
 			while(rs.next()) {
 								
-				guVo = new guestVo(rs.getInt("no"), rs.getString("name"),
+				guVo = new GuestVo(rs.getInt("no"), rs.getString("name"),
 						rs.getString("password"), rs.getString("content"), rs.getString("reg_date"));
 
 			}
