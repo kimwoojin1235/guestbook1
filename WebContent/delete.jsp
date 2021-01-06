@@ -3,7 +3,6 @@
 <%@ page import="com.javaex.vo.GuestVo" %>
 
 <%
-	request.setCharacterEncoding("utf-8");
 int no = Integer.parseInt(request.getParameter("no"));
 String password = request.getParameter("password");
 
