@@ -12,7 +12,7 @@
 	</head>
 	
 	<body>
-		<form action="./delete.jsp" method="get">
+		<form action="./delete.jsp" method="post">
 			비밀번호 <input type="text" name="password">
 			<input type="hidden" name="no" value=<%=no%>>
 			<button type="submit">확인</button><br>

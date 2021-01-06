@@ -120,7 +120,7 @@ public class guestDao {
 		return count;
 	}
 	
-	public int guestdelete(int no) {
+	public int guestdelete(int pass) {
 		
 		getConnection();
 		
@@ -132,7 +132,7 @@ public class guestDao {
 			
 			pstmt = conn.prepareStatement(query);
 			
-			pstmt.setInt(1, no);
+			pstmt.setInt(1, pass);
 			
 			count = pstmt.executeUpdate();
 			
@@ -174,7 +174,8 @@ public class guestDao {
 			// 4.결과처리
 			while(rs.next()) {
 								
-				guVo = new guestVo(rs.getInt("no"), rs.getString("name"), rs.getString("password"), rs.getString("content"), rs.getString("reg_date"));
+				guVo = new guestVo(rs.getInt("no"), rs.getString("name"),
+						rs.getString("password"), rs.getString("content"), rs.getString("reg_date"));
 
 			}
 		} catch (SQLException e) {
