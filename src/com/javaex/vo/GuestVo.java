@@ -2,8 +2,8 @@ package com.javaex.vo;
 
 public class GuestVo {
 	//필드
-	int no;
-	String name, password, content, regdate;
+	private int no;
+	private String name, password, content, regdate;
 
 	//생성자
 	public GuestVo() {}

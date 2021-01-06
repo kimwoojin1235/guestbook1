@@ -76,8 +76,13 @@ public class GuestDao {
 			
 			// 4.결과처리
 			while(rs.next()) {
-								
-				GuestVo guVo = new GuestVo(rs.getInt("no"), rs.getString("name"), rs.getString("password"), rs.getString("content"), rs.getString("reg_date"));
+				
+				int no = rs.getInt("no");
+				String name = rs.getString("name");
+				String password = rs.getString("password");
+				String content = rs.getString("content");
+				String regdate = rs.getString("reg_date");
+				GuestVo guVo = new GuestVo(no, name, password, content, regdate);
 				
 				guList.add(guVo);
 			}
