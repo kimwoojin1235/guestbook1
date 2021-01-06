@@ -17,7 +17,7 @@
 			<input type="hidden" name="no" value=<%=on%>>
 			<button type="submit">확인</button><br>
 			
-			<a href="./addList.jsp">메인으로</a>
+			<a href="./addList.jsp">메인으로 돌아가기</a>
 		</form>
 	</body>
 </html>
