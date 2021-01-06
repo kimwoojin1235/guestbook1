@@ -35,7 +35,6 @@ guestDao gbDao = new guestDao();
 				</tr>
 			</table>
 		</form>
-		
 		<br>
 		<% for(int i=0; i<guList.size();i++) { %>
 			<table border="1">
